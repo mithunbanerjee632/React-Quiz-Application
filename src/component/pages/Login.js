@@ -1,21 +1,18 @@
 import React from "react";
-import classes from "../../styles/signup.module.css";
+import classes from "../../styles/login.module.css";
 import Button from "../Button";
-import Checkbox from "../Checkbox";
 import Form from "../Form";
 import Illustration from "../Illustration";
 import TextInput from "../TextInput";
-
-const Signup = () => {
+const Login = () => {
   return (
     <>
-      <h1>Create an account</h1>
+      <h1>Login to your account</h1>
 
       <div className="column">
         <Illustration />
-        <Form className={`${classes.signup}`}>
-          <TextInput type="text" placeholder="Enter name" icon="person" />
 
+        <Form className={`${classes.login}`}>
           <TextInput
             type="text"
             placeholder="Enter email"
@@ -24,20 +21,12 @@ const Signup = () => {
 
           <TextInput type="password" placeholder="Enter password" icon="lock" />
 
-          <TextInput
-            type="password"
-            placeholder="Confirm password"
-            icon="lock_clock"
-          />
-
-          <Checkbox text="I agree to the Terms &amp; Conditions" />
-
           <Button>
             <span>Submit Now</span>
           </Button>
 
           <div className="info">
-            Already have an account? <a href="login.html">Login</a> instead.
+            Don't have an account? <a href="signup.html">Signup</a> instead.
           </div>
         </Form>
       </div>
@@ -45,4 +34,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
