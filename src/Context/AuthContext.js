@@ -25,17 +25,16 @@ export function AuthProvider({ children }) {
       setCurrentUser(user);
       setLoading(false);
     });
+
     return unsubscribe;
   }, []);
 
-  //sign up function
-
-  async function signup(email, username, password) {
+  // signup function
+  async function signup(email, password, username) {
     const auth = getAuth();
     await createUserWithEmailAndPassword(auth, email, password);
 
-    //update profile
-
+    // update profile
     await updateProfile(auth.currentUser, {
       displayName: username,
     });
@@ -46,15 +45,13 @@ export function AuthProvider({ children }) {
     });
   }
 
-  //login function
-
+  // login function
   function login(email, password) {
     const auth = getAuth();
     return signInWithEmailAndPassword(auth, email, password);
   }
 
-  //logout function
-
+  // logout function
   function logout() {
     const auth = getAuth();
     return signOut(auth);

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "../Context/AuthContext";
+//import AuthProvider from "../Context/AuthContext";
 import "../styles/App.css";
 import Layout from "./Layout";
 import Home from "./pages/Home";
@@ -19,12 +20,6 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/quiz" element={<Quiz />} />
             <Route exact path="/result" element={<Result />} />
-
-            {/* <Home /> 
-        <Signup /> 
-        <Login /> 
-        <Quiz /> 
-        <Result /> */}
           </Routes>
         </Layout>
       </AuthProvider>
