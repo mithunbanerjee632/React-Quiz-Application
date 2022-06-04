@@ -16,10 +16,10 @@ function App() {
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/quiz" element={<Quiz />} />
-            <Route exact path="/result" element={<Result />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/quiz/:id" element={<Quiz />} />
+            <Route path="/result/:id" element={<Result />} />
           </Routes>
         </Layout>
       </AuthProvider>
