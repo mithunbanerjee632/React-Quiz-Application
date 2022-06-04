@@ -10,11 +10,6 @@ const app = initializeApp({
   messagingSenderId: "process.env.REACT_APP_MESSAGING_SENDER_ID",
   appId: "process.env.REACT_APP_ID",
   databaseURL: "process.env.REACT_APP_DATABASE_URL",
-
-  //apiKey: "AIzaSyD0oPzNJwox94RZBTydETPGAvdnCaV5Po8",
-  //apiKey: "process.env.REACT_APP_API_KEY",
-  // databaseURL: "https://react-dev-4867d-default-rtdb.asia-southeast1.firebasedatabase.app",
-  //databaseURL: "process.env.REACT_APP_DATABASE_URL",
 });
 
 export default app;
