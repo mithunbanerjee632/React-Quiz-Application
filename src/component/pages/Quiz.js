@@ -70,7 +70,7 @@ const Quiz = () => {
 
   function prevQuestion() {
     if (currentQuestion >= 1 && currentQuestion <= questions.length) {
-      setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+      setCurrentQuestion((prevCurrent) => prevCurrent - 1);
     }
   }
 
@@ -86,8 +86,7 @@ const Quiz = () => {
       [id]: qna,
     });
 
-    navigate({
-      pathname: `/result/${id}`,
+    navigate(`/result/${id}`, {
       state: {
         qna,
       },
@@ -107,6 +106,7 @@ const Quiz = () => {
           <h1>{qna[currentQuestion].title}</h1>
           <h4>Question can have multiple answers</h4>
           <Answer
+            input
             options={qna[currentQuestion].options}
             handleChange={handleAnswerChange}
           />
