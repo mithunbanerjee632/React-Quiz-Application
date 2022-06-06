@@ -1,7 +1,7 @@
 import { getDatabase, ref, set } from "firebase/database";
 import _ from "lodash";
 import React, { useEffect, useReducer, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import useQuestions from "../../Hooks/useQuestions";
 import Answer from "../Answer";
@@ -40,6 +40,7 @@ const Quiz = () => {
   const [qna, dispatch] = useReducer(reducer, initialstate);
   const { currentUser } = useAuth();
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   //upore j question copy kore checked false korci seta ekbarei korbo and ensure howar jonnno useEffect call kora hoice
   useEffect(() => {
@@ -116,7 +117,7 @@ const Quiz = () => {
             progress={percentage}
             submit={submit}
           />
-          <MiniPlayer id={id} title={qna[currentQuestion].title} />
+          <MiniPlayer id={id} title={state} />
         </>
       )}
     </>
